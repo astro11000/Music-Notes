@@ -1,0 +1,17 @@
+from replit import db
+notes = []
+ask = input('Do you want to write?')
+if ask == 'Yes':   
+   note = input('Write here.')
+   notes.append(note)
+   db["notes"] = notes
+elif ask == 'No':
+     ask2 = input('Do you want to delete your notes?')
+     if ask2 == 'Yes':
+          notes = None
+     elif ask2 == 'No':
+          ask3 = input('Do you want to see your notes?')
+          if ask3 == 'No':
+             exit()
+          elif ask3 == 'Yes':
+               print(db["notes"])
